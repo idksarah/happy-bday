@@ -121,3 +121,5 @@ func updateAnimation(stage int, term *termination.Termination, animation *termin
 
 	return term, animation
 }
+
+// on my life the last commit was 99% me written i just chatgpted this last func and it worked worse than when i wrote it </33 ON MY LIFE!!!
