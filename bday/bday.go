@@ -83,6 +83,7 @@ func main() {
 	termbox.SetInputMode(termbox.InputEsc | termbox.InputMouse)
 
 	var stage int = 0
+	var stageMax int = 5
 
 	// Main input loop
 	for {
@@ -93,7 +94,7 @@ func main() {
 				os.Exit(0)
 			}
 			if ev.Key == termbox.KeyArrowUp {
-				stage++
+				stage = min(stageMax, stage+1)
 				term, animation = updateAnimation(stage, term, animation, 2)
 			}
 			// if ev.Key == termbox.KeyArrowDown {
@@ -105,15 +106,10 @@ func main() {
 	}
 }
 
-// updateAnimation updates the shape of the animation based on the stage
 func updateAnimation(stage int, term *termination.Termination, animation *termination.Entity, framesPerSec int) (*termination.Termination, *termination.Entity) {
-	// Remove the old animation
-	animation.Die() // This cleans up the old animation entity
-
-	// Create a new animation entity
+	animation.Die()
 	animation = term.NewEntity(termination.Position{40, 5, 0})
 
-	// Update the shape based on the stage
 	switch stage {
 	case 0:
 		animation.Shape = letter
@@ -121,18 +117,7 @@ func updateAnimation(stage int, term *termination.Termination, animation *termin
 		animation.Shape = dots
 	}
 
-	// Set the frames per second for the animation
 	term.FramesPerSecond = framesPerSec
 
-	// No need to call go term.Animate() here, it has already been started
-
 	return term, animation
-}
-
-// max is a helper function to prevent stage from going below 0
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
