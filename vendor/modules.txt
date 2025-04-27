@@ -1,0 +1,12 @@
+# github.com/ansoni/termination v0.0.0-20190107171503-2ca8fc1115fc
+## explicit
+github.com/ansoni/termination
+# github.com/dhconnelly/rtreego v1.1.0
+## explicit; go 1.13
+github.com/dhconnelly/rtreego
+# github.com/mattn/go-runewidth v0.0.9
+## explicit; go 1.9
+github.com/mattn/go-runewidth
+# github.com/nsf/termbox-go v1.1.1
+## explicit; go 1.15
+github.com/nsf/termbox-go
