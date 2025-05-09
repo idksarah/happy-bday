@@ -14,4 +14,4 @@ Built using termination (https://github.com/ansoni/termination?tab=readme-ov-fil
 - Termination uses the outdated version of rtreego. If you install v1.2.0 and have errors running in the termination.go file, downgrade to v1.1.0
 
 # Demo
-![Demo](./demo.gif)
+Check out demo.mp4
